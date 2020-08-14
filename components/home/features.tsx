@@ -28,7 +28,7 @@ const features = [
   {
     title: 'TypeScript Support.',
     body: 'Automatic TypeScript configuration and compilation. Type definitions available.',
-    url: '/docs'
+    url: '/docs/basic-features/typescript'
   },
   {
     title: 'Fast Refresh.',
@@ -46,17 +46,18 @@ const features = [
   },
   {
     title: 'API Routes.',
-    body: 'Body',
-    url: '/docs'
+    body: 'Create API endpoints which can be deployed as Serverless Functions.',
+    url: '/docs/api-routes/introduction'
   },
   {
-    title: 'Component-level CSS.',
-    body: 'Body',
-    url: '/docs'
+    title: 'Built-in CSS Support.',
+    body: 'Create component-level styles with CSS modules. Built-in Sass and PostCSS support.',
+    url: '/docs/basic-features/built-in-css-support'
   },
   {
     title: 'Code-splitting and Bundling.',
-    body: 'Body',
+    body:
+      'Minimize the bundle size for each page by automatic code-splitting. Smart prefetching for instant page loads.',
     url: '/docs'
   }
 ];
@@ -64,8 +65,33 @@ const features = [
 function More() {
   return (
     <div className={styles.card}>
-      <h3 className={cn('f4 fw6', styles['card-heading'])}>And more.</h3>
-      <p className={styles['card-body']}>?</p>
+      <h3 className={cn('f4 fw6', styles['card-heading'])}>And More.</h3>
+      <p className={styles['card-body']}>
+        Support for{' '}
+        <InternalLink href="/docs/[[...slug]]" as="/docs/basic-features/environment-variables">
+          environment variables
+        </InternalLink>
+        ,{' '}
+        <InternalLink href="/docs/[[...slug]]" as="/docs/advanced-features/preview-mode">
+          preview mode
+        </InternalLink>
+        ,{' '}
+        <InternalLink href="/docs/[[...slug]]" as="/docs/api-reference/next/head">
+          custom <InlineCode inheritColor>head</InlineCode> tags
+        </InternalLink>
+        ,{' '}
+        <InternalLink
+          as="/docs/basic-features/supported-browsers-features#polyfills"
+          href="/docs/[[...slug]]"
+        >
+          automatic polyfilling
+        </InternalLink>{' '}
+        and more. Everything is{' '}
+        <InternalLink as="/docs/api-reference/next.config.js/introduction" href="/docs/[[...slug]]">
+          configurable
+        </InternalLink>
+        .
+      </p>
     </div>
   );
 }
