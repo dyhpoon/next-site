@@ -33,7 +33,7 @@ export const Code = ({ children, syntax }) => (
   </pre>
 );
 
-export const InlineCode = ({ children, noWrap }) => (
+export const InlineCode = ({ children, noWrap = false }) => (
   <code className={noWrap ? 'no-wrap' : ''}>
     {children}
     <style jsx>
