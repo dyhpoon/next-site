@@ -7,11 +7,7 @@ export default function Features() {
   return (
     <Container wide role="region" aria-labelledby="features">
       <Container center padding>
-        <SectionHeader
-          id="features"
-          title="Why Next.js"
-          description="The world’s leading companies use and love Next.js"
-        />
+        <SectionHeader id="features" title="Features" margin="0 0 3rem 0" />
         <div className="row">
           <div className="column">
             <h3 className="f3 fw6">Pre-Rendering</h3>
