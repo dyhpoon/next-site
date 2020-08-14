@@ -2,80 +2,86 @@ import Container from '../container';
 import Button from '../button';
 import SectionHeader from '../section-header';
 import CompanySlider from './company-slider';
+import { GenericLink } from '../text/link';
+
+const features = [
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  },
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  },
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  },
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  },
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  },
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  },
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  },
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  },
+  {
+    title: 'Title',
+    body: 'Body',
+    url: '/docs'
+  }
+];
 
 export default function Features() {
   return (
     <Container wide role="region" aria-labelledby="features">
       <Container center padding>
         <SectionHeader id="features" title="Features" margin="0 0 3rem 0" />
-        <div className="row">
-          <div className="column">
-            <h3 className="f3 fw6">Pre-Rendering</h3>
-            <p>
-              Statically generated and server-rendered React applications have never been easier.
-            </p>
-          </div>
-          <div className="column">
-            <h3 className="f3 fw6">Static Exporting</h3>
-            <p>
-              No need to learn a new framework. Exporting a static site with Next.js is as easy as a
-              single command.
-            </p>
-          </div>
-          <div className="column">
-            <h3 className="f3 fw6">CSS-in-JS</h3>
-            <p>
-              Next.js comes with <code>styled-jsx</code> included, but it also works with every
-              CSS-in-JS solution you know and love.
-            </p>
-          </div>
-        </div>
-        <div className="row">
-          <div className="column">
-            <h3 className="f3 fw6">Zero Configuration</h3>
-            <p>
-              Automatic code splitting, filesystem based routing, hot code reloading and universal
-              rendering.
-            </p>
-            <Button href="/learn/basics/create-nextjs-app">Learn Next.js</Button>
-          </div>
-          <div className="column">
-            <h3 className="f3 fw6">Fully Extensible</h3>
-            <p>
-              Complete control over Babel and Webpack. Customizable server, routing and
-              next-plugins.
-            </p>
-            <Button href="/docs" amp>
-              View Full Documentation
-            </Button>
-          </div>
-          <div className="column">
-            <h3 className="f3 fw6">Ready for Production</h3>
-            <p>
-              Optimized for a smaller build size, faster dev compilation and dozens of other
-              improvements.
-            </p>
-            <Button href="/showcase">View Showcase</Button>
-          </div>
+        <div className="features-grid">
+          {features.map(({ title, body, url }) => (
+            <div className="card">
+              <h3 className="f3 fw6">{title}</h3>
+              <p>{body}</p>
+              <GenericLink href={url}>Documentation →</GenericLink>
+            </div>
+          ))}
         </div>
         <style jsx>{`
-          .row:not(:last-of-type) {
-            margin-bottom: 3rem;
-          }
-          .column {
+          .card {
+            border: 1px solid var(--accents-2);
+            padding: var(--geist-gap);
+            border-radius: var(--geist-radius);
             text-align: left;
           }
-          // CSS only media query for tablet
-          @media screen and (max-width: 960px) {
-            .row {
-              flex-direction: column;
-              margin: -1.5rem 0;
-            }
-            .column {
-              width: 100%;
-              padding: 1.5rem 0;
-              text-align: center;
-              max-width: 350px;
+
+          .features-grid {
+            display: grid;
+            gap: var(--geist-gap);
+          }
+
+          @media screen and (min-width: 960px) {
+            .features-grid {
+              grid-template-columns: repeat(3, minmax(0, 1fr));
             }
           }
         `}</style>
